@@ -1,0 +1,7 @@
+cas自旋锁避免了那些锁竞争不激烈的情况下，从核心态到用户态的切换，避免了系统上下文切换的开销。
+this.nextServerCyclicCounter.compareAndSet(current, next));
+
+如果nextServerCyclicCounter==current 返回true nextServerCyclicCounter=next
+否则返回false
+
+nextServerIndex就是server 下标中的某个数 如3个server 就是 0/1/2
